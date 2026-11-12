@@ -119,6 +119,17 @@ Las comunicaciones con el servidor de CREA usan HTTPS. La app **no lleva dentro 
 
 ## 10. Tus opciones y derechos
 
+### Cómo pedir que se borren los datos que CREA tiene
+
+CREA solo tiene datos de la app cuando una tablet se activó con un código (sección 3) o cuando se usó el tutor o se envió un reporte (sección 4). Para pedir que se borren:
+
+1. Escribe a **tecnologia@creanicaragua.org** con el asunto «Borrar datos de CREA Aventuras».
+2. Indica el **nombre del grupo o centro** al que CREA dio el código (no hace falta el nombre de ninguna persona menor de edad) y, si lo tienes, la fecha aproximada de la activación.
+3. CREA responde y borra lo que corresponda: el registro de esa tablet en el servidor (la huella del identificador y el token) y, si lo pides, revoca el código. No se puede identificar a una persona concreta, solo una tablet o un grupo.
+4. **Qué se borra y qué se conserva:** los contadores de consultas se borran solos a los 40 días y los reportes de contenido a los 90 días; el registro de la tablet se borra al atender la solicitud. Los datos que están **solo en la tablet** (perfiles, progreso, PIN) no los tiene CREA: se quitan como se explica abajo.
+
+### Qué puedes hacer tú en la tablet
+
 - **Borrar un perfil:** Inicio → Perfiles → Borrar. Elimina de la tablet el apodo, el dibujo, el progreso, la evaluación y la nota del tutor de ese perfil. No elimina lo que es de la tablet y no del perfil (sección 2).
 - **Quitar todo lo que hay en la tablet:** desinstalar la app o borrar sus datos en los ajustes de Android. Eso incluye el token de activación, el PIN de facilitador, el identificador al azar de la instalación, los intentos del PIN y los reportes pendientes.
 - **Tutor con inteligencia artificial:** se desactiva como indica la sección 4.2, o se quita la activación de la tablet (sección 3).
