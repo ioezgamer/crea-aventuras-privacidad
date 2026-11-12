@@ -24,7 +24,7 @@
 <main>
 <article>
 <h1>Política de privacidad de CREA Aventuras</h1>
-<p><strong>Última actualización: 11 de noviembre de 2026</strong></p>
+<p><strong>Última actualización: 12 de noviembre de 2026</strong></p>
 <p>Esta política explica qué información usa la aplicación <strong>CREA Aventuras</strong> («la app») y cómo se protege. La app es publicada por <strong>CREA Nicaragua</strong> («CREA», «nosotros»). Para consultas, escribe a <strong><a href="mailto:tecnologia@creanicaragua.org">tecnologia@creanicaragua.org</a></strong>.</p>
 <h2>1. Resumen</h2>
 <ul>
@@ -33,8 +33,8 @@
 <li><strong>No pide nombre, apellidos, correo, fotos, ubicación, contactos, cámara ni micrófono.</strong></li>
 <li>El apodo, el dibujo y los registros completos de estrellas y progreso se guardan <strong>solo en la tablet</strong>. El tutor opcional utiliza un resumen de aprendizaje (sección 4.2).</li>
 <li>Los juegos funcionan <strong>sin internet</strong>.</li>
-<li>Hay tres casos en que algo sale de la tablet, todos descritos en la sección 4: la <strong>voz natural</strong> y las <strong>preguntas actualizadas</strong> (solo con CREA Home), el <strong>tutor con inteligencia artificial</strong> (opcional y desactivado por defecto) y los <strong>reportes</strong> de una sugerencia de ese tutor.</li>
-<li>La app existe en <strong>dos variantes</strong> (sección 3): la normal, sin permiso de internet, y la de conexión directa, que sí lo tiene.</li>
+<li>Hay tres casos en que algo sale de la tablet, todos descritos en la sección 4: la <strong>voz natural</strong> y las <strong>preguntas actualizadas</strong> (solo con CREA Home), el <strong>tutor con inteligencia artificial</strong> (opcional, apagado por defecto y que solo se enciende con un <strong>código de CREA</strong>) y los <strong>reportes</strong> de una sugerencia de ese tutor.</li>
+<li>La app declara el permiso de <strong>internet</strong>, pero <strong>no se conecta a ningún servidor</strong> mientras nadie active el tutor con un código de CREA ni envíe un reporte. No lleva ninguna llave ni PIN dentro.</li>
 </ul>
 <h2>2. Información que se queda en la tablet</h2>
 <p>Se guarda en el almacenamiento privado de la app, al que otras apps no tienen acceso, y no entra en copias de seguridad. <strong>Estos archivos completos no se envían.</strong> Si se activa el tutor, se transmite un resumen de resultados y una huella del identificador de instalación, como explica la sección 4.2; los reportes pendientes se envían según la sección 4.3.</p>
@@ -51,17 +51,19 @@
 <li>la lista de perfiles y cuál está en uso, y el progreso del perfil <strong>Invitado</strong> (un facilitador puede reiniciarlo en Ayuda);</li>
 <li>audios de voz natural ya descargados, para no pedirlos otra vez (solo con CREA Home);</li>
 <li>los <strong>reportes de sugerencias</strong> del tutor que aún no se pudieron enviar (sección 4.3): el texto reportado y el motivo, sin datos del perfil;</li>
-<li>solo en la variante de conexión directa: el número de intentos fallidos del <strong>PIN de facilitador</strong> (el PIN no se guarda) y un <strong>identificador al azar de la instalación</strong> (sección 4.2). De este identificador sí se envía una huella cuando se usa el tutor.</li>
+<li>si la tablet se activó con un código de CREA (sección 3): el <strong>token de activación</strong> que entrega el servidor, el <strong>PIN de facilitador</strong> que creó la persona (guardado con sal y un cifrado irreversible, nunca en claro), el número de intentos fallidos del PIN y un <strong>identificador al azar de la instalación</strong> (sección 4.2). De este identificador y del token sí se envía algo cuando se usa el tutor.</li>
 </ul>
-<h2>3. Las dos variantes de la app</h2>
-<p>Las dos tienen los mismos juegos. En Ayuda se ve cuál está instalada: la versión de la variante de conexión directa termina en «-directo». CREA indica en cada canal de distribución qué variante ofrece.</p>
-<p><strong>Variante normal.</strong> No declara el permiso de internet: por sí sola no se conecta a ningún servidor. Solo puede comunicarse con <strong>CREA Home</strong>, otra app de CREA que tienen sus tablets, después de comprobar su firma. Sin CREA Home funciona con las preguntas incluidas y la voz de la tablet, y sin tutor con inteligencia artificial.</p>
-<p><strong>Variante de conexión directa.</strong> Pensada para tablets que no tienen CREA Home. Se diferencia en dos cosas:</p>
+<h2>3. Activación con un código de CREA</h2>
+<p><strong>Sin activar</strong> (el caso normal), la app no se conecta a ningún servidor: los juegos, los perfiles, la evaluación y la ruta de aprendizaje funcionan solo en la tablet. Con <strong>CREA Home</strong>, otra app de CREA que tienen sus tablets, la app solo se comunica con ella, después de comprobar su firma (sección 4.1).</p>
+<p>Para usar el <strong>tutor con inteligencia artificial</strong> sin CREA Home hace falta un <strong>código de activación que da CREA</strong> (a una familia, un centro o un grupo). Un facilitador lo escribe en Ayuda → «Tengo un código»:</p>
 <ul>
-<li>Declara el permiso de <strong>internet</strong>. Solo se conecta, por una conexión cifrada (HTTPS), al servidor de CREA, y solo en dos casos: para pedir la ruta del tutor de un perfil que lo tiene activado (sección 4.2) y para enviar el reporte de una sugerencia (sección 4.3), incluido el reintento de reportes que quedaron pendientes. Si nadie ha activado el tutor ni hay reportes pendientes, no hace ninguna conexión.</li>
-<li>El <strong>modo facilitador</strong> se abre en la propia app con un PIN. Se cierra solo a los 15 minutos y al salir de la app. Solo cambia lo que se ve; no concede permisos del sistema.</li>
+<li>La app envía por internet, de forma cifrada (HTTPS), al servidor de CREA: <strong>el código</strong> y <strong>la huella de un identificador al azar</strong> que crea en esa instalación (no sale del aparato: no es el IMEI, el número de serie ni el identificador de publicidad).</li>
+<li>El servidor responde con un <strong>token de activación</strong>, ligado a esa tablet, que vence a los 90 días o antes. Si CREA <strong>revoca</strong> el código, el token deja de valer y el tutor se apaga solo.</li>
+<li>El servidor guarda por cada código: la etiqueta que le puso CREA, cuántas tablets puede usar, su vencimiento y su estado; y por cada tablet, la huella del identificador y la fecha. <strong>No guarda el código en claro</strong> ni la dirección IP (solo cuenta intentos para frenar abusos).</li>
+<li>La persona <strong>crea su propio PIN de facilitador</strong> (4 a 8 números), que se guarda en la tablet con sal y cifrado irreversible. Abre el modo facilitador: se cierra solo a los 15 minutos y al salir de la app; solo cambia lo que se ve (guía de los juegos, etapa, perfiles, tutor) y no concede permisos del sistema. CREA no puede recuperar el PIN: si se olvida, se quita la activación y se vuelve a empezar.</li>
+<li><strong>Quitar la activación</strong> (en el modo facilitador) borra de la tablet el token y el PIN. Los perfiles y el progreso no se tocan.</li>
 </ul>
-<p>Si una tablet con la variante de conexión directa tiene además CREA Home, la app usa CREA Home igual que la variante normal.</p>
+<p>La activación no activa el tutor por sí sola: después, un facilitador debe activarlo perfil por perfil (sección 4.2).</p>
 <h2>4. Información que sale de la tablet</h2>
 <p>Solo en estos tres casos.</p>
 <h3>4.1 Con CREA Home: preguntas, modo facilitador y voz natural</h3>
@@ -77,14 +79,14 @@
 <p><strong>Qué se envía</strong> cada vez que se pide una ruta:</p>
 <ul>
 <li>un <strong>resumen de aprendizaje del perfil</strong>: para cada actividad posible, el juego, la etapa, el nivel, cuántas partidas recientes hay (hasta 3) y el porcentaje de acierto en ellas, junto con textos fijos de la app (el objetivo del juego y el motivo de la sugerencia);</li>
-<li>un <strong>código de la tablet</strong>: en la variante de conexión directa es la huella de un identificador al azar que la app crea en esa instalación; no se obtiene del aparato (no es el IMEI, el número de serie ni el identificador de publicidad) ni de un perfil. Con CREA Home, el código de la tablet lo pone el sistema de CREA y esta app no lo conoce;</li>
+<li>el <strong>token de activación</strong> y un <strong>código de la tablet</strong> (la huella del identificador al azar de la instalación, que no se obtiene del aparato ni de un perfil). Con CREA Home, el código de la tablet lo pone el sistema de CREA y esta app no lo conoce;</li>
 <li>como en cualquier conexión por internet, el servidor y su proveedor de alojamiento reciben la <strong>dirección IP</strong> de la red desde la que se conecta la tablet.</li>
 </ul>
 <p><strong>Qué no se envía:</strong> el apodo, el dibujo, el identificador del perfil, las respuestas una por una, las fechas de las partidas ni datos de otros perfiles.</p>
 <p>Este resumen <strong>no lleva el nombre ni el apodo, pero no es anónimo en sentido estricto</strong>: es un dato seudónimo. Va acompañado de un código que se repite en esa tablet, y describe el avance de una persona concreta de un grupo pequeño.</p>
 <p><strong>A dónde va y qué se guarda.</strong></p>
 <ul>
-<li>El <strong>servidor de CREA</strong> (alojado en Render) recibe el resumen y el código, y reenvía solo el resumen a Anthropic. No guarda el resumen ni la respuesta. Guarda <strong>contadores de uso</strong>: cuántas consultas hizo cada código de tablet cada día, para limitar a 30 por tablet y día, y totales diarios y mensuales del servicio. Los contadores diarios se borran solos a los 40 días aproximadamente y los mensuales, a los 400 días aproximadamente. El proveedor de alojamiento puede conservar registros técnicos de las conexiones según sus propias condiciones.</li>
+<li>El <strong>servidor de CREA</strong> (alojado en Render) recibe el resumen y el código, y reenvía solo el resumen a Anthropic. No guarda el resumen ni la respuesta. Guarda <strong>contadores de uso</strong>: cuántas consultas hizo cada tablet y cada código de activación cada día, para limitar a 30 por tablet y día y un tope diario por código, y totales diarios y mensuales del servicio. Los contadores diarios se borran solos a los 40 días aproximadamente y los mensuales, a los 400 días aproximadamente. El proveedor de alojamiento puede conservar registros técnicos de las conexiones según sus propias condiciones.</li>
 <li><strong>Anthropic</strong> recibe el resumen (no el código de la tablet) para generar la ruta y lo trata según sus condiciones para clientes de su API.</li>
 <li>La respuesta (un texto corto y tres actividades de la app) se muestra en la tablet. La app descarta cualquier respuesta que no sean actividades de su propia lista.</li>
 </ul>
@@ -97,27 +99,23 @@
 <li>la versión de la app.</li>
 </ul>
 <p>No se envía el apodo, el perfil ni los resultados. El código de la tablet se usa solo para limitar los reportes a 5 por tablet y día y no se guarda con el reporte. El servidor de CREA conserva cada reporte unos 90 días para revisarlo.</p>
-<p>Si en ese momento no hay cómo enviarlo, el reporte queda guardado en la tablet (hasta 20) y la app lo envía más adelante, al abrirse, aunque para entonces el tutor se haya desactivado. En la variante normal esto depende de que CREA Home admita el envío de reportes; mientras no lo admita, los reportes permanecen en la tablet y no llegan a CREA.</p>
+<p>Si en ese momento no hay cómo enviarlo, el reporte queda guardado en la tablet (hasta 20) y la app lo envía más adelante, al abrirse, aunque para entonces el tutor se haya desactivado. Con CREA Home, esto depende de que CREA Home admita el envío de reportes; mientras no lo admita y la tablet no esté activada con un código, los reportes permanecen en la tablet y no llegan a CREA.</p>
 <h2>5. Evaluación inicial y etapas</h2>
 <p>Al empezar, la app pregunta el grado o la edad y hace diez preguntas cortas de lectura y matemáticas para saber en qué etapa empezar. El resultado es un <strong>punto de partida pedagógico, no una nota</strong>, y se guarda solo en la tablet. Cada estudiante ve los juegos de su etapa.</p>
 <h2>6. Niñez y adolescencia</h2>
 <p>La app está dirigida a personas menores de edad. CREA la diseñó teniendo en cuenta la política de Familias de Google Play: no contiene anuncios, compras ni enlaces externos, no tiene funciones sociales y no pide datos de contacto. Lo que puede salir de la tablet es únicamente lo descrito en la sección 4; el tutor con inteligencia artificial está desactivado por defecto. El uso con estudiantes lo organiza CREA con las familias y los centros. Las familias pueden pedirle a CREA que desactive el tutor o que borre el perfil de una niña, un niño o un adolescente escribiendo a <strong><a href="mailto:tecnologia@creanicaragua.org">tecnologia@creanicaragua.org</a></strong>.</p>
 <p>Esta política describe cómo funciona la app. No es una certificación de cumplimiento de ninguna ley.</p>
 <h2>7. Permisos del dispositivo</h2>
-<ul>
-<li><strong>Variante normal:</strong> no solicita ningún permiso de Android.</li>
-<li><strong>Variante de conexión directa:</strong> solo el permiso de <strong>internet</strong>.</li>
-</ul>
-<p>Ninguna variante pide ubicación, cámara, micrófono, contactos ni almacenamiento. Para leer en voz alta se usa el motor de texto a voz que ya trae la tablet.</p>
+<p>La app solicita un solo permiso de Android: <strong>internet</strong>, que solo se usa en los casos de la sección 4 (activar con un código, pedir la ruta del tutor de un perfil que lo tiene activado y enviar un reporte). No pide ubicación, cámara, micrófono, contactos ni almacenamiento. Para leer en voz alta se usa el motor de texto a voz que ya trae la tablet.</p>
 <h2>8. Información que no recopilamos</h2>
 <p>CREA no recopila nombres, datos de contacto, ubicación, identificadores de publicidad ni del aparato, datos de pago ni informes de errores a través de esta app, y no incluye bibliotecas de publicidad o analítica de terceros. Lo único que CREA recibe de la app es lo descrito en la sección 4.</p>
 <h2>9. Seguridad</h2>
-<p>Las comunicaciones con el servidor de CREA usan HTTPS. Los datos de los perfiles permanecen en el almacenamiento privado de la app. En la variante de conexión directa, la app lleva una huella del PIN de facilitador, no el PIN.</p>
+<p>Las comunicaciones con el servidor de CREA usan HTTPS. La app <strong>no lleva dentro ninguna llave ni PIN</strong>: el acceso al tutor depende de un token revocable que entrega el servidor, y el PIN de facilitador lo crea cada persona y se guarda en la tablet con sal y cifrado irreversible. Los datos de los perfiles permanecen en el almacenamiento privado de la app.</p>
 <h2>10. Tus opciones y derechos</h2>
 <ul>
 <li><strong>Borrar un perfil:</strong> Inicio → Perfiles → Borrar. Elimina de la tablet el apodo, el dibujo, el progreso, la evaluación y la nota del tutor de ese perfil. No elimina lo que es de la tablet y no del perfil (sección 2).</li>
-<li><strong>Quitar todo lo que hay en la tablet:</strong> desinstalar la app o borrar sus datos en los ajustes de Android. Eso incluye el identificador al azar de la instalación, los intentos del PIN y los reportes pendientes.</li>
-<li><strong>Tutor con inteligencia artificial:</strong> se desactiva como indica la sección 4.2.</li>
+<li><strong>Quitar todo lo que hay en la tablet:</strong> desinstalar la app o borrar sus datos en los ajustes de Android. Eso incluye el token de activación, el PIN de facilitador, el identificador al azar de la instalación, los intentos del PIN y los reportes pendientes.</li>
+<li><strong>Tutor con inteligencia artificial:</strong> se desactiva como indica la sección 4.2, o se quita la activación de la tablet (sección 3).</li>
 <li><strong>Contadores de uso y reportes del servidor:</strong> se borran solos en los plazos de las secciones 4.2 y 4.3. Están asociados al código de la tablet o a ningún código, no a un perfil ni a un nombre, por lo que CREA no puede buscarlos por persona.</li>
 </ul>
 <p>Como CREA no guarda tu apodo ni tu progreso en servidores, no hay un expediente tuyo que podamos consultar o corregir por ti.</p>
